@@ -3,7 +3,7 @@ import { API_URL } from '@/constants'
 
 // export const revalidate = 300
 
-export default async function ShopISRPage() {
+export default function ShopISRPage() {
 
 	const products = [
   {
