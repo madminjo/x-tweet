@@ -7,8 +7,11 @@ export default async function ShopISRPage() {
 	const response = await fetch(API_URL, {
 		next: { revalidate: 300 }
 	})
-	const products = (await response.json()) as Product[]
+console.log(response)
 
+	const products = (await response.json()) as Product[]
+	console.log(products);
+	
 	return (
 		<div className="grid grid-cols-2 gap-4">
 			{products.map(product => (
