@@ -4,11 +4,10 @@ import { API_URL } from '@/constants'
 // export const revalidate = 300
 
 export default async function ShopISRPage() {
-	const response = await fetch('http://127.0.0.1:3000/api/products', {
+	const response = await fetch(API_URL, {
 		next: { revalidate: 300 }
 	})
-console.log(response)
-
+ if (!response.ok) throw new Error('Failed to fetch products');
 	const products = (await response.json()) as Product[]
 	console.log(products);
 	
