@@ -1,22 +1,12 @@
+// next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // Вместо images.domains: ['example.com', 'cdn.example.com']
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'example.com',
-        port: '',
-        pathname: '/**', // разрешаем любые пути
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.example.com',
-        port: '',
-        pathname: '/**',
-      },
-      // можно добавить другие записи по необходимости
+      { protocol: 'https', hostname: 'pbs.twimg.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'abs.twimg.com', pathname: '/**' },
+      // добавьте другие хосты, откуда вы грузите изображения
     ],
   },
 };
