@@ -1,11 +1,24 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
-    domains: ['fakestoreapi.com']
+    // Вместо images.domains: ['example.com', 'cdn.example.com']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'example.com',
+        port: '',
+        pathname: '/**', // разрешаем любые пути
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.example.com',
+        port: '',
+        pathname: '/**',
+      },
+      // можно добавить другие записи по необходимости
+    ],
   },
-  reactCompiler: true,
 };
 
 export default nextConfig;
